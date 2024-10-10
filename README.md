@@ -34,7 +34,7 @@ docker-compose up --build -d
 | env                         | default value          | description                                |
 |:----------------------------|:-----------------------|:-------------------------------------------|
 | PORT                        | 3000                   | Service port                               |
-| APP_ENV                     | development            | App environment                            |
+| APP_ENV                     | development            | App environment (development or production)|
 | POSTGRES_HOST               | localhost              | Postgres host                              |
 | POSTGRES_PORT               | 5432                   | Postgres port                              |
 | POSTGRES_DB_NAME            | core                   | Postgres database name                     |
