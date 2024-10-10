@@ -1,7 +1,7 @@
 # Тестовое от "Effective Mobile"
+# Реализация онлайн библиотеки песен 🎶
 
 ## Build
-
 Создайте .env файл
 ```bash
 cp .env.example .env
@@ -28,6 +28,8 @@ bin/app
 docker-compose up --build -d
 ```
 
+## Swagger link
+http://${your_host}:${PORT}/swagger/index.html
 
 # Environment
 

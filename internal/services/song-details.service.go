@@ -54,7 +54,9 @@ func (*SongDetailsMockApiService) FindSongDetails(ctx context.Context, group str
 		nil,
 	)
 
-	date, _ := time.Parse("2006-01-02", "2006-16-07")
+	// date mock
+	date := time.Date(2006, 7, 16, 0, 0, 0, 0, &time.Location{})
+	// song details mock
 	mock := &SongDetails{
 		ReleaseDate: date,
 		Text:        "Ooh baby, don't you know I suffer?\\nOoh baby, can you hear me moan?\\nYou caught me under false pretenses\\nHow long before you let me go?\\n\\nOoh\\nYou set my soul alight\\nOoh\\nYou set my soul alight",
