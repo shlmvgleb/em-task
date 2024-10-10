@@ -1,4 +1,4 @@
-# garik-api
+# Тестовое от "Effective Mobile"
 
 ## Build
 
@@ -6,7 +6,6 @@
 ```bash
 cp .env.example .env
 ```
-Убедитесь, что верно заполнили переменные окружения
 
 ```bash
 make build
@@ -34,8 +33,10 @@ docker-compose up --build -d
 
 | env                         | default value          | description                                |
 |:----------------------------|:-----------------------|:-------------------------------------------|
-| PORT                        | 8080                   | Service port                               |
-| APP_ENV                     | development            | Type of instance(development | production) | 
-| OPENAI_COMPLETION_MODEL     | gpt-4o                 | Open AI credentials                        | 
-| OPENAI_API_KEY              |                        | Open AI credentials                        | 
-| OPENAI_URL                  | https://api.openai.com | Open AI credentials                        | 
+| PORT                        | 3000                   | Service port                               |
+| APP_ENV                     | development            | App environment                            |
+| POSTGRES_HOST               | localhost              | Postgres host                              |
+| POSTGRES_PORT               | 5432                   | Postgres port                              |
+| POSTGRES_DB_NAME            | core                   | Postgres database name                     |
+| POSTGRES_USER               | postgres               | Postgres user                              |
+| POSTGRES_PWD                | root                   | Postgres password                          |

@@ -1,9 +1,10 @@
-package utils
+package requests
 
 import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -14,7 +15,7 @@ func RequestWithJSON[T any, R any](ctx context.Context, client *http.Client, url
 
 	bodyData, err := json.Marshal(body)
 	if err != nil {
-		return result, ErrInvalidRequestBody
+		return result, errors.New("invalid request body")
 	}
 
 	req, _ := http.NewRequestWithContext(ctx, http.MethodPost, url, bytes.NewBuffer(bodyData))
@@ -37,7 +38,7 @@ func RequestWithJSON[T any, R any](ctx context.Context, client *http.Client, url
 	}
 
 	if res.StatusCode != http.StatusOK {
-		return result, fmt.Errorf("%w: %s", ErrInvalidResponse, resBody)
+		return result, fmt.Errorf("%w: %s", errors.New("invalid response from service"), resBody)
 	}
 
 	if err := json.Unmarshal(resBody, &result); err != nil {
